@@ -12,7 +12,7 @@ jobs:
       matrix:
         # Use these Java versions
         java: [
-          26,    # Current Java LTS
+          25,    # Current Java LTS
         ]
     runs-on: ubuntu-22.04
     steps:
@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java }}
-          distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
